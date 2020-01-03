@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Hotels } from '../hotels.model';
+import { HotelsService } from '../hotels.service';
 
 @Component({
   selector: 'app-hotel-item',
@@ -8,9 +9,12 @@ import { Hotels } from '../hotels.model';
 })
 export class HotelItemComponent implements OnInit {
   @Input() hotelItem: Hotels;
-  constructor() { }
+  constructor(private hotelsService: HotelsService) { }
 
   ngOnInit() {
+  }
+  hotelSelected() {
+    this.hotelsService.hotelSelected.emit(this.hotelItem);
   }
 
 }
