@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { HotelsService } from '../hotels.service';
-import { Hotels } from '../hotels.model';
+import { Hotels } from '../../../../shared/hotels.model';
 
 @Component({
   selector: 'app-hotel-details',
@@ -9,20 +8,8 @@ import { Hotels } from '../hotels.model';
 })
 export class HotelDetailsComponent implements OnInit {
 
-  @Input() hotelSelect: Hotels;
-  test = false;
-  hotels;
-
-  constructor(private hotelsService: HotelsService) { }
+  constructor() { }
 
   ngOnInit() {
-    // this.hotelsService.hotelSelected.subscribe(
-    //   (hotel: Hotels) => {
-    //     console.log(hotel);
-    //     console.log(this.hotelSelected);
-    //     this.hotelSelected = hotel;
-    //     console.log(this.hotelSelected);
-    //   }
-    // );
   }
 }
