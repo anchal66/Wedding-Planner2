@@ -16,9 +16,11 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HotelDetailsComponent } from './components/venues/venue-hotels/hotel-details/hotel-details.component';
 import { HttpClientModule } from '@angular/common/http';
-import { AddVenueComponent } from './admin/components/venues/add-venue/add-venue.component';
-import { AdminVenuesComponent } from './admin/components/venues/admin-venues.component';
+import { AddVenueComponent } from './admin/components/admin-venues/add-venue/add-venue.component';
+import { AdminVenuesComponent } from './admin/components/admin-venues/admin-venues.component';
 import { FormsModule } from '@angular/forms';
+import { AddHotelComponent } from './admin/components/admin-hotels/add-hotel/add-hotel.component';
+import { AdminHotelsComponent } from './admin/components/admin-hotels/admin-hotels.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { FormsModule } from '@angular/forms';
     FooterComponent,
     HotelDetailsComponent,
     AddVenueComponent,
-    AdminVenuesComponent
+    AdminVenuesComponent,
+    AddHotelComponent,
+    AdminHotelsComponent
   ],
   imports: [
     BrowserModule,

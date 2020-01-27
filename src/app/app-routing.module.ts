@@ -5,7 +5,7 @@ import { VenuesComponent } from './components/venues/venues.component';
 import { VendorsComponent } from './components/vendors/vendors.component';
 import { HotelDetailsComponent } from './components/venues/venue-hotels/hotel-details/hotel-details.component';
 import { VenueHotelsComponent } from './components/venues/venue-hotels/venue-hotels.component';
-import { AdminVenuesComponent } from './admin/components/venues/admin-venues.component';
+import { AdminVenuesComponent } from './admin/components/admin-venues/admin-venues.component';
 
 
 const routes: Routes = [
