@@ -16,6 +16,9 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HotelDetailsComponent } from './components/venues/venue-hotels/hotel-details/hotel-details.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AddVenueComponent } from './admin/components/venues/add-venue/add-venue.component';
+import { AdminVenuesComponent } from './admin/components/venues/admin-venues.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,13 +33,16 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderComponent,
     FooterComponent,
     HotelDetailsComponent,
+    AddVenueComponent,
+    AdminVenuesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

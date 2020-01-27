@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Hotels } from '../../../shared/hotels.model';
+import { HotelsService } from 'src/app/services/hotels.service';
+import { Hotels } from 'src/app/shared/hotels.model';
 
 @Component({
   selector: 'app-venue-hotels',
@@ -7,12 +8,20 @@ import { Hotels } from '../../../shared/hotels.model';
   styleUrls: ['./venue-hotels.component.css']
 })
 export class VenueHotelsComponent implements OnInit {
-  hotelsList: Hotels[];
-  hotelSelected: Hotels;
 
-  constructor() { }
+  hotels: Hotels[];
+
+  constructor(private hotelService: HotelsService) { }
 
   ngOnInit() {
+    this.listProducts();
   }
 
+  listProducts() {
+    this.hotelService.getProductList().subscribe(
+      data => {
+        this.hotels = data;
+      }
+    );
+  }
 }

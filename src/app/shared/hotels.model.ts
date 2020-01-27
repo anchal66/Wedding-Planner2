@@ -1,6 +1,5 @@
 export interface Hotels {
   banquetId: number;
-  venue: number;
   banquetName: string;
   address1: string;
   address2: string;
