@@ -1,1 +1,49 @@
-<p>add-hotel works!</p>
+<form #f2="ngForm" (ngSubmit)="onPostHotel(f2)">
+  <div>
+    <label for="banquetName">Enter Banquet Name:</label>
+    <input id="banquetName" type="text" ngModel name="banquetName">
+  </div>
+  <div>
+    <label for="address1">Enter address1:</label>
+    <input id="address1" type="text" ngModel name="address1">
+  </div>
+  <div>
+    <label for="address2">Enter address2:</label>
+    <input id="address2" type="text" ngModel name="address2">
+  </div>
+  <div>
+    <label for="zip">Enter zip:</label>
+    <input id="zip" type="number" ngModel name="zipCode">
+  </div>
+  <div>
+    <label for="old_price">Enter old_price:</label>
+    <input id="old_price" type="number" ngModel name="old_price">
+  </div>
+  <div>
+    <label for="price">Enter price:</label>
+    <input id="price" type="number" ngModel name="price">
+  </div>
+  <div>
+    <label for="intro">Enter intro:</label>
+    <input id="intro" type="text" ngModel name="intro">
+  </div>
+  <div>
+    <label for="capacity">Enter capacity:</label>
+    <input id="capacity" type="number" ngModel name="capacity">
+  </div>
+  <div>
+    <label for="areas">Enter areas:</label>
+    <input id="areas" type="number" ngModel name="areas">
+  </div>
+  <div>
+    <label for="imgUrl">Enter imgUrl:</label>
+    <input id="imgUrl" type="text" ngModel name="imgUrl">
+  </div>
+  <input type="hidden" ngModel name="venue">
+  <div>
+    <label for="active">Enter active radiobutton:</label><br>
+    <input type="radio" ngModel name="active" value="true"> Active<br>
+    <input type="radio" ngModel name="active" value="false"> Not Active
+  </div>
+  <button type="submit">Submit</button>
+</form>

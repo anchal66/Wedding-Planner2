@@ -14,11 +14,11 @@ export class VenueHotelsComponent implements OnInit {
   constructor(private hotelService: HotelsService) { }
 
   ngOnInit() {
-    this.listProducts();
+    this.listHotels();
   }
 
-  listProducts() {
-    this.hotelService.getProductList().subscribe(
+  listHotels() {
+    this.hotelService.getHotelList().subscribe(
       data => {
         this.hotels = data;
       }

@@ -13,10 +13,14 @@ export class HotelsService {
 
   constructor(private http: HttpClient) { }
 
-  getProductList(): Observable<Hotels[]> {
+  getHotelList(): Observable<Hotels[]> {
     return this.http.get<GetResponse>(this.url).pipe(
       map(response => response._embedded.banquetHalls)
     );
+  }
+  PostHotel(form) {
+    this.http.post(this.url, form).subscribe(post => console.log(post),
+      error => console.log(error));
   }
 }
 interface GetResponse {
