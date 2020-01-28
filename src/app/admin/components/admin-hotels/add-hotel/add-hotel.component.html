@@ -39,7 +39,14 @@
     <label for="imgUrl">Enter imgUrl:</label>
     <input id="imgUrl" type="text" ngModel name="imgUrl">
   </div>
-  <input type="hidden" ngModel name="venue">
+  <label for="venue">Venue:</label>
+  <select ngModel name="venue" id="venue">
+    <option value="">Select Venue</option>
+    <option *ngFor="let venue of venueList"
+    [value]="venue._links.venue.href">
+      {{venue.venueName}}
+    </option>
+  </select>
   <div>
     <label for="active">Enter active radiobutton:</label><br>
     <input type="radio" ngModel name="active" value="true"> Active<br>

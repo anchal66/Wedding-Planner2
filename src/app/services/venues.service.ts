@@ -27,6 +27,6 @@ export class VenueServices {
 }
 interface GetResponse {
   _embedded: {
-    venues: Venues[];
+    venues: any[];
   };
 }
