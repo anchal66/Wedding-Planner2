@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-hotel-item',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./hotel-item.component.css']
 })
 export class HotelItemComponent implements OnInit {
+
+  @Input() hotels;
 
   ngOnInit() {
   }

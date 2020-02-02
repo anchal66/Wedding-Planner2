@@ -1,1 +1,18 @@
-
+<div class="card">
+  <div class="imageContainer">
+    <img class="image" [src]="hotels.imgUrl" alt="Image will go here" />
+  </div>
+  <div class="dataContainer">
+    <div class="classVenueName">Name: {{hotels.banquetName}}</div>
+    <div>Capacity: {{hotels.capacity}}</div>
+    <div>Date: {{hotels.lastUpdated | date}}</div>
+    <div>Price: {{hotels.price | currency:"INR"}}</div>
+    <div style='display: "flex"; width: "100%";justifyContent:"space-between";'>
+      <div>Address: {{hotels.address1}}, </div>
+      <div class="mb-2">{{hotels.address2}}, {{hotels.zipCode}}</div>
+      <div>
+        <!-- <StarRatings rating=hotels.Rating-0.5 starDimension="40px" starSpacing="2px" starDimension="12px" /> -->
+      </div>
+    </div>
+  </div>
+</div>

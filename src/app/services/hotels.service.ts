@@ -25,6 +25,6 @@ export class HotelsService {
 }
 interface GetResponse {
   _embedded: {
-    banquetHalls: Hotels[];
+    banquetHalls: any[];
   };
 }
