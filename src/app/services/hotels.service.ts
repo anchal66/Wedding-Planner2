@@ -9,6 +9,8 @@ import { map } from 'rxjs/operators';
 })
 export class HotelsService {
 
+  hotelSelected;
+
   private url = 'http://localhost:8080/api/banquet_halls';
 
   constructor(private http: HttpClient) { }

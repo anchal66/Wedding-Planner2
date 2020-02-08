@@ -1,6 +1,5 @@
-List:
-<p *ngFor="let hotel of hotels">
-  {{ hotel.banquetName }}
-</p>
-
-<app-hotel-item *ngFor="let hotel of hotels" [hotels]="hotel"></app-hotel-item>
+<h2>Banquet Halls: </h2>
+<app-hotel-item *ngFor="let hotel of hotels"
+ [hotels]="hotel"
+ (click)="hotelSelected(hotel)">
+</app-hotel-item>

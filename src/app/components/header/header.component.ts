@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { VenueServices } from 'src/app/services/venues.service';
+import { Venues } from 'src/app/shared/venues.model';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  venueList: Venues[];
+
+  constructor(private venueService: VenueServices) { }
 
   ngOnInit() {
+    this.getVenueList();
+  }
+  getVenueList() {
+    this.venueService.getVenueList().subscribe(data => this.venueList = data,
+      error => console.log(error));
   }
 
 }

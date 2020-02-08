@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Hotels } from '../../../../shared/hotels.model';
+import { HotelsService } from 'src/app/services/hotels.service';
+import { Hotels } from 'src/app/shared/hotels.model';
 
 @Component({
   selector: 'app-hotel-details',
@@ -8,8 +9,12 @@ import { Hotels } from '../../../../shared/hotels.model';
 })
 export class HotelDetailsComponent implements OnInit {
 
-  constructor() { }
+  hotelSelected: Hotels;
+
+  constructor(private hotelService: HotelsService) { }
 
   ngOnInit() {
+    this.hotelSelected = this.hotelService.hotelSelected;
+    console.log(this.hotelSelected);
   }
 }

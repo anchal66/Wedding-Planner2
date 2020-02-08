@@ -12,8 +12,8 @@ import { AdminHotelsComponent } from './admin/components/admin-hotels/admin-hote
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'venues', component: VenuesComponent },
-  { path: 'venues/hotels', component: VenueHotelsComponent },
-  { path: 'venues/:venueName/:+hotelid', component: HotelDetailsComponent },
+  { path: ':venues/hotels', component: VenueHotelsComponent },
+  { path: ':venues/:venueName/:+hotelid', component: HotelDetailsComponent },
   { path: 'vendors', component: VendorsComponent },
   { path: 'admin/venues', component:  AdminVenuesComponent},
   { path: 'admin/hotels', component:  AdminHotelsComponent}

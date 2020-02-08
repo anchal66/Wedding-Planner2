@@ -24,4 +24,8 @@ export class VenueHotelsComponent implements OnInit {
       }
     );
   }
+  hotelSelected(hotel) {
+    console.log(hotel)
+    this.hotelService.hotelSelected = hotel;
+  }
 }
