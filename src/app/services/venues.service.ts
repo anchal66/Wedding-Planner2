@@ -19,6 +19,11 @@ export class VenueServices {
       map(response => response._embedded.venues)
     );
   }
+  getHotelsFromVenue(tempUrl): Observable<Hotels[]> {
+    return this.http.get<GetResponseHotel>(tempUrl).pipe(
+      map(response => response._embedded.banquetHalls)
+    );
+  }
 
   PostVenue(form) {
     this.http.post(this.url, form).subscribe(post => console.log(post),
@@ -28,5 +33,10 @@ export class VenueServices {
 interface GetResponse {
   _embedded: {
     venues: any[];
+  };
+}
+interface GetResponseHotel {
+  _embedded: {
+    banquetHalls: any[];
   };
 }
