@@ -17,7 +17,7 @@
       <mat-menu #venueMenu="matMenu">
         <p *ngFor="let venue of venueList"
          mat-menu-item
-         routerLink="/{{venue.venueName}}/hotels">
+         routerLink="/{{venue.urlName}}/hotels">
          {{venue.venueName}}
       </p>
       </mat-menu>

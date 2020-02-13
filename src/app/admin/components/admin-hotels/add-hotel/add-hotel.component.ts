@@ -17,7 +17,6 @@ export class AddHotelComponent implements OnInit {
 
   ngOnInit() {
     this.getVenueList();
-    console.log(this.venueList);
   }
   onPostHotel(form: NgForm) {
     console.log(form);
@@ -26,7 +25,7 @@ export class AddHotelComponent implements OnInit {
     this.hotelsService.PostHotel(form.value);
   }
   getVenueList() {
-    this.venueService.getVenueList().subscribe(data => this.venueList = data,
+    this.venueService.getVenueList().subscribe(data => {this.venueList = data; console.log(data)},
       error => console.log(error));
   }
 

@@ -10,6 +10,8 @@ import { Venues } from '../shared/venues.model';
 })
 export class VenueServices {
 
+  postDone=false;
+
   private url = 'http://localhost:8080/api/venues';
 
   constructor(private http: HttpClient) { }
@@ -26,7 +28,10 @@ export class VenueServices {
   }
 
   PostVenue(form) {
-    this.http.post(this.url, form).subscribe(post => console.log(post),
+    this.http.post(this.url, form).subscribe(post => {
+      console.log(post);
+      this.postDone=true;
+    },
       error => console.log(error));
   }
 }

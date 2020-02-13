@@ -13,7 +13,7 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 export class VenueHotelsComponent implements OnInit {
 
   venues: Venues[];
-  venueSelected = 'Noida';
+  venueSelected ;
   hotels: Hotels[];
   AllHotels:Hotels[];
 
@@ -26,9 +26,10 @@ export class VenueHotelsComponent implements OnInit {
       (params: ParamMap) => {
         console.log(params.get('venues'));
         this.venueSelected = params.get('venues');
+        this.listVenues();
       }
     )
-    this.listVenues();
+    
     this.listHotels();
   }
 
@@ -46,7 +47,7 @@ export class VenueHotelsComponent implements OnInit {
         this.venues = data;
         console.log(data)
         for (let i = 0; i < data.length; i++) {
-          if (data[i].venueName == "Noida") {
+          if (data[i].urlName == this.venueSelected) {
             let tempUrl = data[i]._links.banquetHalls.href
             this.venueService.getHotelsFromVenue(tempUrl).subscribe(data=>{
               this.hotels=data;
