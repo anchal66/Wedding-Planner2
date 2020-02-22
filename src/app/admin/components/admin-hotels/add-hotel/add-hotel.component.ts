@@ -11,6 +11,8 @@ import { Venues } from 'src/app/shared/venues.model';
 })
 export class AddHotelComponent implements OnInit {
 
+  success=false;
+
   venueList: Venues[];
 
   constructor(private hotelsService: HotelsService, private venueService: VenueServices) { }
@@ -22,7 +24,15 @@ export class AddHotelComponent implements OnInit {
     console.log(form);
     console.log(form.value);
     // form.value.venue = 'http://localhost:8080/api/venues/1';
-    this.hotelsService.PostHotel(form.value);
+    this.hotelsService.PostHotel(form.value).subscribe(data=>{
+      this.success=true;
+      console.log(data);
+    },
+      error=>{
+        this.success=false;
+        console.log(error);
+      }
+    );
   }
   getVenueList() {
     this.venueService.getVenueList().subscribe(data => {this.venueList = data; console.log(data)},

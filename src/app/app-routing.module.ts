@@ -13,8 +13,8 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'admin/venues', component:  AdminVenuesComponent},
   { path: 'admin/hotels', component:  AdminHotelsComponent},
-  { path: 'venues', component: VenuesComponent },
-  { path: ':venues/hotels', component: VenueHotelsComponent },
+  // { path: 'venues', component: VenuesComponent },
+  { path: ':venues/hotels', component: VenuesComponent },
   { path: ':venues/:venueName/:+hotelid', component: HotelDetailsComponent },
   { path: 'vendors', component: VendorsComponent }
 ];

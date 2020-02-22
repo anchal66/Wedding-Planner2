@@ -9,7 +9,7 @@ import { map } from 'rxjs/operators';
 })
 export class HotelsService {
 
-  hotelSelected;
+  hotelSelected =new EventEmitter<Hotels>();
 
   private url = 'http://localhost:8080/api/banquet_halls';
 
@@ -21,8 +21,7 @@ export class HotelsService {
     );
   }
   PostHotel(form) {
-    this.http.post(this.url, form).subscribe(post => console.log(post),
-      error => console.log(error));
+    return this.http.post(this.url, form)
   }
 }
 interface GetResponse {

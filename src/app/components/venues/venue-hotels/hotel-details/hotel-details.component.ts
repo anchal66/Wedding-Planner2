@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { HotelsService } from 'src/app/services/hotels.service';
 import { Hotels } from 'src/app/shared/hotels.model';
 
@@ -7,14 +7,12 @@ import { Hotels } from 'src/app/shared/hotels.model';
   templateUrl: './hotel-details.component.html',
   styleUrls: ['./hotel-details.component.css']
 })
-export class HotelDetailsComponent implements OnInit {
+export class HotelDetailsComponent implements OnChanges {
 
-  hotelSelected: Hotels;
+  @Input() hotel: Hotels;
 
   constructor(private hotelService: HotelsService) { }
 
-  ngOnInit() {
-    this.hotelSelected = this.hotelService.hotelSelected;
-    console.log(this.hotelSelected);
+  ngOnChanges() {
   }
 }

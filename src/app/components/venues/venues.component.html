@@ -3,7 +3,10 @@
     <app-venue-hotels></app-venue-hotels>
   </div>
   <div class="col-md-6">
-    <app-hotel-details></app-hotel-details>
+    Test
+    <app-hotel-details *ngIf="hotelSelected" [hotel]="hotelSelected">
+
+    </app-hotel-details>
   </div>
 </div>
 

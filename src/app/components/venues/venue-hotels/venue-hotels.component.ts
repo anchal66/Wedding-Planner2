@@ -59,7 +59,7 @@ export class VenueHotelsComponent implements OnInit {
     );
   }
   hotelSelected(hotel) {
-    console.log(hotel)
-    this.hotelService.hotelSelected = hotel;
+    console.log("Hotel",hotel)
+    this.hotelService.hotelSelected.emit(hotel);
   }
 }
